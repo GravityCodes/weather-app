@@ -2,6 +2,8 @@ import "./JohanCSSReset.css";
 import "./style.css";
 import apiController from "./apiController";
 import screenController from "./screenController";
+import {format} from "date-fns";
+
 
 const weather = new apiController("boston");
 
@@ -22,3 +24,9 @@ let currentWeather = [
 ];
 
 screenController.addCurrentDayWeather(...currentWeather);
+
+for(let i=2; i < 15; i++){
+    screenController.addNextDaysWeather(format(new Date(weatherDays[i].datetime), "EEEE"), weatherDays[i].icon, weatherDays[i].temp);
+}
+
+

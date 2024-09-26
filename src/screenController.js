@@ -1,17 +1,61 @@
+import rain from "./assets/icons/rain.png";
+import partlyCloudy from "./assets/icons/partlyCloudy.png";
+import cloudy from "./assets/icons/cloudy.png";
+
 export default (() => {
-    function addCurrentDayWeather(location, temperature, maxTemperature, minTemperature, weatherIcon, description) {
     
     const $weatherCardItems = document.querySelectorAll(".current-weather-item");
+    const $dailyWeatherContainer = document.querySelector("#daily-weather-card-container");
+    const weatherIcons = {
+        "rain": rain,
+        "partly-cloudy-day":  partlyCloudy,
+        "cloudy": cloudy
+    }
+
+    function addCurrentDayWeather(location, temperature, maxTemperature, minTemperature, weatherIcon, description) {
     
     $weatherCardItems[0].textContent = location;
     $weatherCardItems[1].textContent = `${temperature}°`;
     $weatherCardItems[2].textContent = `H: ${maxTemperature}°`;
     $weatherCardItems[3].textContent = `L: ${minTemperature}°`;
-    $weatherCardItems[4].textContent = weatherIcon;
+    $weatherCardItems[4].children[0].src = weatherIcons[weatherIcon];
     $weatherCardItems[5].textContent = description;
     
-
-    
   }
-  return { addCurrentDayWeather };
+
+  function addNextDaysWeather (Date, weatherIcon, temp) {
+    
+    
+    let dayCard = document.createElement("div");
+    dayCard.classList.add("daily-weather-card");
+
+    let date = document.createElement("div");
+    date.classList.add("daily-weather-card-date");
+    date.textContent = Date;
+
+    let weatherImgContainer = document.createElement("div");
+    weatherImgContainer.classList.add("daily-weather-card-img-container");
+    
+    let weatherImg = document.createElement("img");
+    weatherImg.src = weatherIcons[weatherIcon];
+    weatherImg.alt = `${weatherIcon} icon`;
+
+    weatherImgContainer.appendChild(weatherImg);
+
+    let weatherTemp = document.createElement("div");
+    weatherTemp.classList.add("daily-weather-card-temp");
+    weatherTemp.textContent = `${temp}°`;
+
+    let leftSideContainer = document.createElement("div");
+    leftSideContainer.classList.add("daily-weather-card-left-side-container");
+
+    [date, weatherImgContainer].forEach(child => leftSideContainer.appendChild(child));
+
+    [leftSideContainer, weatherTemp].forEach(child => dayCard.appendChild(child));
+
+    $dailyWeatherContainer.appendChild(dayCard);
+
+  }
+
+  return { addCurrentDayWeather, addNextDaysWeather };
 })();
