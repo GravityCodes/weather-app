@@ -3,8 +3,8 @@
 @font-face {
   font-family: "montserrat_alternatesblack";
   src:
-    url("./assets/montserratalternates-black-webfont.woff2") format("woff2"),
-    url("./assets/montserratalternates-black-webfont.woff") format("woff");
+    url("./assets/fonts/montserratalternates-black-webfont.woff2") format("woff2"),
+    url("./assets/fonts/montserratalternates-black-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -12,8 +12,8 @@
 @font-face {
   font-family: "montserrat_alternatesXBd";
   src:
-    url("./assets/montserratalternates-extrabold-webfont.woff2") format("woff2"),
-    url("./assets/montserratalternates-extrabold-webfont.woff") format("woff");
+    url("./assets/fonts/montserratalternates-extrabold-webfont.woff2") format("woff2"),
+    url("./assets/fonts/montserratalternates-extrabold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -21,9 +21,9 @@
 @font-face {
   font-family: "montserrat_alternatesLtIt";
   src:
-    url("./assets/montserratalternates-lightitalic-webfont.woff2")
+    url("./assets/fonts/montserratalternates-lightitalic-webfont.woff2")
       format("woff2"),
-    url("./assets/montserratalternates-lightitalic-webfont.woff") format("woff");
+    url("./assets/fonts/montserratalternates-lightitalic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -31,8 +31,8 @@
 @font-face {
   font-family: "montserrat_alternatesregular";
   src:
-    url("./assets/montserratalternates-regular-webfont.woff2") format("woff2"),
-    url("./assets/montserratalternates-regular-webfont.woff") format("woff");
+    url("./assets/fonts/montserratalternates-regular-webfont.woff2") format("woff2"),
+    url("./assets/fonts/montserratalternates-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -49,7 +49,7 @@
   --c-transparent-5: #fbe9d099;
 }
 
-html{
+html {
   background-color: var(--c-color-1);
 }
 
@@ -138,7 +138,7 @@ label[for="search"] {
   padding: 20px;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-rows: repeat(3, 1fr);
 }
 
@@ -195,7 +195,7 @@ label[for="search"] {
   grid-row: 3 / 4;
   align-self: end;
   justify-self: center;
-  
+
   color: var(--c-color-5);
 }
 

@@ -3,9 +3,8 @@ const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "development",
-  devtool: "eval-source-map",
+  devtool: "eval",
   devServer: {
-    static: "./dist",
     watchFiles: ["./src/template.html"],
   },
 });
