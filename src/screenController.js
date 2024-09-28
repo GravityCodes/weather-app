@@ -2,7 +2,7 @@ import rain from "./assets/icons/rain.png";
 import partlyCloudy from "./assets/icons/partlyCloudy.png";
 import cloudy from "./assets/icons/cloudy.png";
 import clearDay from "./assets/icons/clearDay.png";
-
+import loadingGifUrl from "./assets/animations/loading.gif";
 
 export default (() => {
   const $weatherCardItems = document.querySelectorAll(".current-weather-item");
@@ -15,6 +15,8 @@ export default (() => {
     cloudy: cloudy,
     "clear-day": clearDay,
   };
+  const search = document.querySelector("#search");
+  const searchBtn = document.querySelector(".search-btn");
 
   function addCurrentDayWeather(
     location,
@@ -71,13 +73,7 @@ export default (() => {
     $dailyWeatherContainer.textContent = "";
   }
 
-  function startLoading () {
 
-  }
 
-  function endLoading () {
-
-  }
-
-  return { addCurrentDayWeather, addNextDaysWeather, clearNextDaysWeather, startLoading, endLoading };
+  return { addCurrentDayWeather, addNextDaysWeather, clearNextDaysWeather, search, searchBtn };
 })();
