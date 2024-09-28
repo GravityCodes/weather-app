@@ -62,16 +62,19 @@ body {
 #header {
   background-color: var(--c-color-1);
   padding: 0px 5px;
+  display: flex;
+  justify-content: center;
 }
 
 #header-items {
   
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
   align-items: center;
   gap: 10px;
-  width: 100%;
+  width: clamp(410px, 80vw,1500px);
+
 }
 
 .logo {
@@ -79,7 +82,7 @@ body {
   font-family: montserrat_alternatesblack;
   color: var(--c-color-2);
   white-space: nowrap;
-  font-size: clamp(1rem, 5vw, 5rem);
+  font-size: clamp(1rem, 5vw, 3rem);
 }
 
 #search-field {
@@ -116,14 +119,14 @@ label[for="search"] {
 
 .search-btn {
   position: absolute;
-  top: 6px;
+  top: 8px;
   right: 10px;
   background-color: transparent;
   border: 2px solid var(--c-color-5);
   color: #fbe9d0;
   border-radius: 10px;
-  padding: 5px;
-  font-size: clamp(0.5rem, 3vw, 1rem);
+  padding: 3px;
+  font-size: 0.8rem;
   cursor: pointer;
 }
 
@@ -150,7 +153,7 @@ label[for="search"] {
 
 #current-weather {
   height: 35%;
-  width: clamp(400px, 75vw, 2000px) ;
+  width: clamp(400px, 75vw, 1000px) ;
   margin: 20px auto;
 }
 
