@@ -73,7 +73,21 @@ export default (() => {
     $dailyWeatherContainer.textContent = "";
   }
 
+  function showError(){
+    const errorContainer = document.createElement("div");
+    errorContainer.id = "error-card";
 
+    const errorText = document.createElement("p");
+    errorText.textContent = "Error: Could not get city.";
+    
+    errorContainer.appendChild(errorText);
 
-  return { addCurrentDayWeather, addNextDaysWeather, clearNextDaysWeather, search, searchBtn };
+    document.body.appendChild(errorContainer);
+
+    setTimeout(() => {
+      document.body.removeChild(errorContainer);
+    },3000);
+  }
+
+  return { addCurrentDayWeather, addNextDaysWeather, clearNextDaysWeather, search, searchBtn, showError };
 })();

@@ -12,10 +12,11 @@ export default class {
     try {
       let response = await fetch(this.url, {mode: 'cors'});
       let responseJson = await response.json();
-
       this.response = await responseJson;
+
     } catch (error) {
       console.error(error);
+      return "error";
     }
   }
 
