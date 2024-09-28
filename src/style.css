@@ -3,7 +3,8 @@
 @font-face {
   font-family: "montserrat_alternatesblack";
   src:
-    url("./assets/fonts/montserratalternates-black-webfont.woff2") format("woff2"),
+    url("./assets/fonts/montserratalternates-black-webfont.woff2")
+      format("woff2"),
     url("./assets/fonts/montserratalternates-black-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -12,8 +13,10 @@
 @font-face {
   font-family: "montserrat_alternatesXBd";
   src:
-    url("./assets/fonts/montserratalternates-extrabold-webfont.woff2") format("woff2"),
-    url("./assets/fonts/montserratalternates-extrabold-webfont.woff") format("woff");
+    url("./assets/fonts/montserratalternates-extrabold-webfont.woff2")
+      format("woff2"),
+    url("./assets/fonts/montserratalternates-extrabold-webfont.woff")
+      format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -23,7 +26,8 @@
   src:
     url("./assets/fonts/montserratalternates-lightitalic-webfont.woff2")
       format("woff2"),
-    url("./assets/fonts/montserratalternates-lightitalic-webfont.woff") format("woff");
+    url("./assets/fonts/montserratalternates-lightitalic-webfont.woff")
+      format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -31,8 +35,10 @@
 @font-face {
   font-family: "montserrat_alternatesregular";
   src:
-    url("./assets/fonts/montserratalternates-regular-webfont.woff2") format("woff2"),
-    url("./assets/fonts/montserratalternates-regular-webfont.woff") format("woff");
+    url("./assets/fonts/montserratalternates-regular-webfont.woff2")
+      format("woff2"),
+    url("./assets/fonts/montserratalternates-regular-webfont.woff")
+      format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -67,14 +73,12 @@ body {
 }
 
 #header-items {
-  
   display: flex;
   justify-content: space-around;
   padding: 10px;
   align-items: center;
   gap: 10px;
-  width: clamp(410px, 80vw,1500px);
-
+  width: clamp(410px, 80vw, 1500px);
 }
 
 .logo {
@@ -99,7 +103,7 @@ label[for="search"] {
   user-select: none;
   text-align: center;
   cursor: text;
-  font-size: clamp(.2rem,3vw,1rem);
+  font-size: clamp(0.2rem, 3vw, 1rem);
   transition: all 0.2s;
 }
 
@@ -145,15 +149,13 @@ label[for="search"] {
   padding: 0px 5px;
 }
 
-
-
 #main-content {
   height: 100%;
 }
 
 #current-weather {
   height: 35%;
-  width: clamp(400px, 75vw, 1000px) ;
+  width: clamp(400px, 75vw, 1000px);
   margin: 20px auto;
 }
 
@@ -186,7 +188,6 @@ label[for="search"] {
   font-size: clamp(2rem, 15vw, 5.5rem);
   align-self: center;
   justify-self: start;
-
 }
 
 #current-weather-card-temp-container {
@@ -291,7 +292,7 @@ label[for="search"] {
   background-color: var(--c-color-2);
   padding: 10px;
   border: 2px solid var(--c-color-2);
-  border-radius:10px;
+  border-radius: 10px;
   color: var(--c-color-6);
-  font-family: montserrat_alternatesblack ;
+  font-family: montserrat_alternatesblack;
 }

@@ -10,10 +10,9 @@ export default class {
 
   async fetchData() {
     try {
-      let response = await fetch(this.url, {mode: 'cors'});
+      let response = await fetch(this.url, { mode: "cors" });
       let responseJson = await response.json();
       this.response = await responseJson;
-
     } catch (error) {
       console.error(error);
       return "error";
@@ -21,7 +20,7 @@ export default class {
   }
 
   getWeatherDays() {
-    return  this.response.days;
+    return this.response.days;
   }
 
   getLocation() {

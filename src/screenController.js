@@ -24,7 +24,7 @@ export default (() => {
     maxTemperature,
     minTemperature,
     weatherIcon,
-    description
+    description,
   ) {
     $weatherCardItems[0].textContent = location;
     $weatherCardItems[1].textContent = `${temperature}°F`;
@@ -59,35 +59,42 @@ export default (() => {
     leftSideContainer.classList.add("daily-weather-card-left-side-container");
 
     [date, weatherImgContainer].forEach((child) =>
-      leftSideContainer.appendChild(child)
+      leftSideContainer.appendChild(child),
     );
 
     [leftSideContainer, weatherTemp].forEach((child) =>
-      dayCard.appendChild(child)
+      dayCard.appendChild(child),
     );
 
     $dailyWeatherContainer.appendChild(dayCard);
   }
 
-  function clearNextDaysWeather () {
+  function clearNextDaysWeather() {
     $dailyWeatherContainer.textContent = "";
   }
 
-  function showError(){
+  function showError() {
     const errorContainer = document.createElement("div");
     errorContainer.id = "error-card";
 
     const errorText = document.createElement("p");
     errorText.textContent = "Error: Could not get city.";
-    
+
     errorContainer.appendChild(errorText);
 
     document.body.appendChild(errorContainer);
 
     setTimeout(() => {
       document.body.removeChild(errorContainer);
-    },3000);
+    }, 3000);
   }
 
-  return { addCurrentDayWeather, addNextDaysWeather, clearNextDaysWeather, search, searchBtn, showError };
+  return {
+    addCurrentDayWeather,
+    addNextDaysWeather,
+    clearNextDaysWeather,
+    search,
+    searchBtn,
+    showError,
+  };
 })();
